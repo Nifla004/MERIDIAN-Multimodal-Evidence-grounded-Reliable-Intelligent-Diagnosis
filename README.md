@@ -14,7 +14,6 @@ The purpose is not a marginally higher AUC. The purpose is a system a radiologis
 ## **Architecture**
 ````markdown
 
-```text
 INPUT LAYER
   │
   ├── CT Volume → 3D Med-Image Encoder → img_emb (256)
