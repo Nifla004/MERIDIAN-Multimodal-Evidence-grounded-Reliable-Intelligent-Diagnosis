@@ -60,7 +60,7 @@ INPUT LAYER
               PREDICT / ESCALATE / ABSTAIN
 ````
 ## **The Eight Independent Contributions**
-**Contribution 1 — Cross-Modal Evidence Alignment (CMEA).** The system evaluates whether the visual evidence in the CT image actually supports what the radiology report claims. It computes a cosine similarity between image and text embeddings and uses this as a runtime reliability signal. Low CMEA indicates a potentially inconsistent or misleading case — the report may describe findings not visible in the image. CMEA score is empirically validated to correlate with prediction correctness.
+**Contribution 1 — Cross-Modal Evidence Alignment (CMEA).** The system evaluates whether the visual evidence in the CT representation is consistent with the information encoded in the radiology report. It computes cosine similarity between image and text embeddings and uses this score as an additional runtime reliability signal. The current prototype investigates whether cross-modal consistency can provide useful information about prediction reliability, with further validation required on real clinical datasets.
 
 **Contribution 2 — Aleatoric and Epistemic Uncertainty Decomposition.** Using MC-Dropout with thirty forward passes, MERIDIAN decomposes predictive uncertainty into aleatoric uncertainty (irreducible, from ambiguous cases) and epistemic uncertainty (reducible, from model ignorance). A clinician receiving a high-epistemic-uncertainty case knows more training data would help. A high-aleatoric case is genuinely ambiguous and needs expert review regardless.
 
